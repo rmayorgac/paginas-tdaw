@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mi página de prueba</title>
+        <style>
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                align-items: start;
+            }
+            figure { margin: 0; }
+            figure img { width: 100%; height: auto; display: block; }
+            .media-embed { max-width: 560px; margin-top: 1rem; }
+            iframe { width: 100%; height: 315px; border: 0; }
+            audio { display: block; margin-top: 0.5rem; }
+
+            form label { display: block; margin-top: 0.5rem; }
+            form input[type="text"],
+            form input[type="email"],
+            form textarea {
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 0.25rem;
+                padding: 0.4rem;
+            }
+            form textarea { min-height: 100px; resize: vertical; }
+            form .form-actions { margin-top: 0.75rem; }
+
+            footer {
+                margin-top: 2rem;
+                padding: 0.75rem 0;
+                text-align: center;
+                font-size: 0.9rem;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Mi Portfolio</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li>Galeria</li>
+                <li>Contacto</li>
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <h2>Sobre mí</h2>
+                <p>
+                    Hola, soy [Tu Nombre], un apasionado del desarrollo web. Me encanta crear sitios web atractivos y funcionales.
+                </p>
+                <ul>
+                    <li>Interes 1</li>
+                    <li>Interes 2</li>
+                    <li>Interes 3</li>
+                </ul>
+
+                <img src="foto_perfil_generica.jpg" alt="Descripción de la imagen" width="150" height="150">
+            </section>
+
+
+            <section id="galeria-multimedia">
+                <h2>Galería multimedia</h2>
+
+                <div class="grid" aria-label="Galería de imágenes">
+                    <figure>
+                        <img src="img1.png" alt="Descripción imagen 1">
+                        <figcaption>Imagen 1 — descripción</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img2.jpg" alt="Descripción imagen 2">
+                        <figcaption>Imagen 2 — descripción</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img3.jpg" alt="Descripción imagen 3">
+                        <figcaption>Imagen 3 — descripción</figcaption>
+                    </figure>
+                </div>
+
+                <div class="media-embed" aria-label="Video de YouTube">
+
+                    <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" 
+                            title="Video de ejemplo - Big Buck Bunny"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+
+
+                <div class="media-embed" aria-label="Audio">
+
+                    <audio controls>
+                        <source src="audio1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento <code>audio</code>.
+                    </audio>
+                </div>
+            </section>
+
+            <section id="contacto">
+                <h2>Contacto</h2>
+                <form action="#" method="post" aria-label="Formulario de contacto">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Restablecer</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            Nombre: Rodrigo Mayorga — correo: rodrigomayorga@example.com — 2025
+        </footer>
+
+        <aside></aside>
+    </body>
+</html>
