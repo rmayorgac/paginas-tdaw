@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Persona</title>
+</head>
+<body>
+    <h1 th:text="${persona.id == null ? 'Nueva Persona' : 'Editar Persona'}"></h1>
+
+    <form th:action="@{/personas}" th:object="${persona}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}" required />
+        <br/>
+        <label>Apellido:</label>
+        <input type="text" th:field="*{apellido}" required />
+        <br/>
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a href="/personas">Volver a la lista</a>
+</body>
+</html>
