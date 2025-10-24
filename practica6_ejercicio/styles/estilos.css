@@ -1,0 +1,151 @@
+h1,h2,h3,h4,nav,footer{
+    font-family: "Trebuchet MS","Lucia Grande",Tahoma,sans-serif;   
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Cambria, serif;
+    font-size: 100%;
+    background-color: whitesmoke;
+    background-image: 
+        url(../images/background-pattern.png);
+}
+
+h1{
+    font-size: 6rem;
+}
+h2{
+    font-size: 1.125rem;
+}
+h3{
+    font-size: 1em;
+    border-bottom: solid 1pt #999999;
+    margin: 0 0 0.5em 0;
+}
+
+p{
+    font-size: 1em;
+}
+
+a:visited {
+    color: #BB78BB;
+}
+
+a:link{
+    font-weight: bold;
+    color: #47B3F7;
+}
+
+a[href^="mailto"]{
+    background: url(../images/email.png) no-repeat 0 3px;
+    padding-left: 1em;
+}
+
+a[href^="tel"]{
+    background: url(../images/call.png) no-repeat 0 3px;
+    padding-left: 1em;
+}
+
+header{
+    background-image: url(../images/header-background.png);
+    background-repeat: repeat;
+}
+
+nav#firstMenu{
+    background-color: #283549;
+    font-size: 0.85em;
+    text-align: right;
+    padding-right: 6em;
+}
+
+nav#secondaryMenu{
+    background-color: #DAE1E8;
+    font-size: 1em;
+    padding-left: 6em;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline;
+}
+
+nav{
+    padding: 0.50em;
+}
+
+nav a{
+    padding: 0.25em;
+}
+
+article>div{
+    background-color: white;
+    text-align: center;
+    margin: 1.5em 6em 1.5em 6em;
+}
+
+article>div img{
+    border: solid 1.5px #999999;
+    padding: 0.5em;
+    margin-top: 1em;
+}
+
+section{
+    background-color: white;
+    margin: 1em 6em 1em 6em;
+    border: solid 1pt black;
+}
+
+section h3{
+    color: mintcream;
+    padding: 0.5em;
+    background-image: url(../images/header-background.png);
+    background-repeat: repeat;
+}
+
+section p{
+    margin-left: 0.5em;
+}
+
+section em {
+    color: #828275
+}
+
+div.act ul li{
+    list-style: none;
+    display: inline;
+}
+
+div.act{
+    background-color: #283649;
+    font-size: 0.75em;
+    padding: 0.5em;
+    margin-top: 1em;
+}
+
+div.act a{
+    background-color: #DAE1E8;
+    padding: 0.1em 1em 0.1em 2em;
+    border: solid 1px #999999;
+    border-radius: 4px;
+    margin-right: 0.5em;
+}
+
+.Edit{
+    background: url(../images/edit.png) no-repeat;
+    background-position: 0.250em 0.150em;
+}
+
+.Flag{
+    background: url(../images/flag.png) no-repeat;
+    background-position: 0.250em 0.150em;
+}
+
+footer{
+    background-color: #283649;
+    margin: 1em 6em 1em 6em;
+    padding: 0.5em;
+}
+
+footer p{
+    color: mintcream;
+    font-size: 0.875em;
+}
