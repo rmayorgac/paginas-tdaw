@@ -1,0 +1,100 @@
+/* tienda.css - estilos para tienda-arte.html */
+
+/* fondo grande que se adapta */
+body {
+  background-image: url("../images/art-background4.jpg");
+  background-size: cover;           /* observa: propiedad sugerida */
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: #111;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+/* encabezado: caja blanca en la esquina superior izquierda, usando Six Caps si existe */
+.site-header {
+  width: 320px;
+  background: rgba(255,255,255,0.95);
+  padding: 0.8em 1em;
+  margin: 1.2em;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+}
+
+.site-header h1 {
+  font-family: "Six Caps", "Impact", Tahoma, sans-serif;
+  font-size: 2.4em;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.2em;
+}
+
+.site-header h2 {
+  font-weight: 400;
+  font-size: 0.95em;
+  color: #666;
+}
+
+/* caja principal translúcida (la figura grande del centro-izquierda) */
+.main-box {
+  width: 46%;
+  min-width: 300px;
+  background: rgba(255,255,255,0.85); /* parcialmente translúcido */
+  padding: 1.2em 1.4em;
+  margin: 8% 0 2% 8%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* encabezado de la caja (h2) */
+.main-box h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+/* countdown: caja más oscura dentro de la principal (transparencia alfa) */
+.countdown {
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  display: inline-block;
+  padding: 0.9em 1.6em;
+  font-weight: 700;
+  margin: 0.6em 0 1em 0;
+  font-size: 1.1em;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.12);
+}
+
+/* footer interno de contactos (dentro del article) */
+.contact-row {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  background: rgba(255,255,255,0.0);
+}
+
+/* link de contacto */
+.contact-link {
+  color: #2a6bd6;
+  text-decoration: underline;
+  margin-right: 0.6em;
+}
+
+/* iconos sociales en línea */
+.icons img {
+  vertical-align: middle;
+  margin-right: 0.4em;
+  width: 22px;
+  height: 22px;
+}
+
+/* responsive: para ventanas pequeñas, ocupar casi toda la anchura */
+@media (max-width: 900px) {
+  .main-box {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20%;
+  }
+  .site-header {
+    width: 280px;
+    margin-left: 2%;
+  }
+}

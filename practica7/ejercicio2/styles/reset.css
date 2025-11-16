@@ -1,0 +1,11 @@
+/* reset.css: elimina estilos por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, main, header, footer, article, section {
+  height: auto;
+  font-family: "Six Caps", "Impact", Tahoma, Arial, sans-serif;
+}
