@@ -1,0 +1,208 @@
+/* RESET Y CONFIGURACIÓN GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f4ef; /* fondo claro */
+  color: #333;
+  line-height: 1.6;
+
+  display: flex;           /* para poder usar margin-top: auto en footer */
+  flex-direction: column;
+}
+
+/* cuando envolvemos contenido en <main>, esto hará que el footer se quede abajo */
+main {
+  flex: 1 1 auto;
+  min-height: 0; /* evita overflow en algunos navegadores cuando hay elementos flex internos */
+}
+
+/* ===========================================================
+   HEADER
+   - Marrón oscuro, texto blanco, navegación centrada
+   =========================================================== */
+header {
+  background-color: #5c4033; /* marrón oscuro */
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+header h1 {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* navegación principal */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+nav ul li {
+  margin: 0;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+nav a:hover {
+  color: #f1d3b3;
+}
+
+/* ===========================================================
+   SECCIÓN HERO
+   - Beige claro, centrado, padding amplio
+   =========================================================== */
+.hero {
+  background-color: #e8d4b0; /* beige claro */
+  text-align: center;
+  padding: 50px 20px;
+}
+.hero h2 {
+  font-size: 1.8rem;
+  color: #3e2723;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1rem;
+  color: #4a2f26;
+}
+
+/* ===========================================================
+   SECCIÓN MENÚ
+   - Fondo beige suave, tarjetas flexibles con bordes redondeados
+   =========================================================== */
+.menu {
+  background-color: #fffaf3;
+  padding: 30px 20px;
+}
+.menu h3 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #3e2723;
+  font-size: 1.25rem;
+}
+
+/* contenedor de tarjetas: flex, wrap y espacio entre */
+.menu-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;         /* permite que bajen a columna en pantallas pequeñas */
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* tarjeta individual */
+.menu .item {
+  background-color: #fff2df;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 250px;         /* flexible: min-basis 250px, puede crecer y reducirse */
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+.menu .item h4 {
+  color: #4e342e;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+/* ===========================================================
+   FOOTER
+   - Fondo marrón oscuro, centrado y compacto
+   =========================================================== */
+footer {
+  background-color: #5c4033;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  margin-top: auto; /* empuja footer al final cuando main no llena */
+}
+
+/* ===========================================================
+   RESPONSIVIDAD
+   - Tablet: reordena nav en columna, centra tarjetas
+   - Móvil: apila navegación y tarjetas, ajusta paddings y fuentes
+   =========================================================== */
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .menu-items {
+    justify-content: center;
+  }
+
+  .menu .item {
+    flex: 1 1 45%;
+    max-width: 420px;
+  }
+}
+
+/* Móvil: < 768px */
+@media (max-width: 767px) {
+  header {
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .menu {
+    padding: 20px;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu .item {
+    width: 100%;
+    max-width: 420px;
+    text-align: left;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+}

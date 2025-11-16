@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #222;
+}
+section {
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.08);
+}
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* ===========================================================
+   EJERCICIO 1: Contenedor Flex Básico
+   - Alinear en fila, espacio uniforme, centrado vertical
+   - Padding de 10px a cada elemento
+   =========================================================== */
+.ej1-container {
+  display: flex;                   /* fila por defecto */
+  justify-content: space-around;   /* espacio uniforme entre items */
+  align-items: center;             /* centrado vertical */
+  padding: 10px;
+  border: 2px solid #555;
+  gap: 10px;
+}
+.ej1-container > div {
+  background-color: #ddd;
+  padding: 10px;                   /* padding solicitado */
+  border-radius: 4px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* ===========================================================
+   EJERCICIO 2: Dirección de Flex y Wrap
+   - Usa el mismo HTML que el ejercicio 1 (mismo número de divs)
+   - wrap, column en móvil <600px, centrado en eje transversal
+   =========================================================== */
+.ej2-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* centra en eje transversal */
+  flex-wrap: wrap;       /* permite wrapping si no caben */
+  gap: 10px;
+  border: 2px solid #555;
+  padding: 10px;
+}
+.ej2-container > div {
+  background-color: #cfc;
+  padding: 20px;
+  flex: 1 1 100px;       /* flex-grow:1, flex-shrink:1, flex-basis:100px */
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* media query para convertir a columna cuando ancho < 600px */
+@media (max-width: 600px) {
+  .ej2-container {
+    flex-direction: column;
+    align-items: center; /* asegurar centrado cuando es columna */
+  }
+}
+
+/* ===========================================================
+   EJERCICIO 3: Menú Responsive
+   - 4 enlaces, fila en escritorio, columna en móvil (<500px)
+   - enlaces ocupan 100% ancho en móvil
+   =========================================================== */
+nav {
+  display: flex;
+  justify-content: space-around; /* espaciar al máximo en pantallas grandes */
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+nav a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* móvil: apilar enlaces y que ocupen todo el ancho */
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  nav a {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* ===========================================================
+   EJERCICIO 4: Tarjetas Flexibles
+   - 3 tarjetas con imagen, título y texto
+   - Fila con espacio igual, ancho flexible mínimo 200px
+   - Pasa a columna en contenedores pequeños (flex-wrap)
+   =========================================================== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;                /* permitir que bajen a nueva línea */
+  justify-content: space-around;  /* espacio igual entre tarjetas */
+  gap: 10px;
+}
+.card {
+  background-color: #eef;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  flex: 1 1 200px;                /* min 200px, crece si hay espacio */
+  max-width: 300px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ===========================================================
+   EJERCICIO 5: Layout Completo (basado en imagen1.png)
+   - header/footer altura fija 80px
+   - sidebar ancho fijo 200px
+   - main flexible ajustándose al espacio restante
+   - uso de flex-grow/shrink/basis donde aplica
+   =========================================================== */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* ocupa al menos la pantalla */
+  border: 2px solid #444;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* header y footer con altura fija */
+.layout header,
+.layout footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  height: 80px;        /* altura fija solicitada */
+  flex-shrink: 0;      /* no reducirse */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main toma todo el espacio restante */
+.layout main {
+  display: flex;
+  flex: 1 1 auto;      /* grow para ocupar espacio, shrink si es necesario */
+  min-height: 0;       /* importante para layouts flex con contenido interno que se despliegue */
+}
+
+/* sidebar fijo */
+.layout aside {
+  background-color: #ddd;
+  width: 200px;        /* ancho fijo solicitado */
+  flex: 0 0 200px;     /* no crecer ni reducirse, basis = 200px */
+  padding: 20px;
+}
+
+/* main-content flexible */
+.layout .main-content {
+  flex: 1 1 auto;      /* ocupa el espacio restante */
+  padding: 20px;
+  background-color: #fafafa;
+  overflow: auto;
+}
+
+/* responsividad: en pantallas pequeñas apilar columna */
+@media (max-width: 600px) {
+  .layout main {
+    flex-direction: column;
+  }
+  .layout aside {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+}
