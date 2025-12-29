@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: #2980b9;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+header {
+    background-color: #3498db;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.header-content {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+header .logo {
+    float: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+header nav {
+    float: right;
+    margin-top: 5px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav a {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#box {
+    width: 96%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+#railLeft {
+    float: left;
+    width: 20%;
+    padding-right: 20px;
+}
+
+#middle {
+    float: left;
+    width: 60%;
+    padding: 0 20px;
+}
+
+aside {
+    float: right;
+    width: 20%;
+    padding-left: 10px;
+}
+
+.alertLeft {
+    background-color: #fcf8e3;
+    border: 1px solid #faebcc;
+    color: #8a6d3b;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    overflow: hidden;
+}
+
+.alertLeft .icon-user {
+    float: left;
+    background-image: url('image/icon.png');
+    width: 40px; 
+    height: 40px;
+    background-size: cover;
+    margin-right: 10px;
+    background-color: #ccc; 
+    border-radius: 50%;
+}
+
+.great h3 {
+    background-color: #d9edf7;
+    color: #31708f;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    border-radius: 4px;
+    border: 1px solid #bce8f1;
+}
+
+nav.great ul li {
+    border-bottom: 1px solid #eee;
+}
+
+nav.great ul li a {
+    display: block;
+    padding: 8px 5px;
+}
+
+#recentMessageList li {
+    overflow: hidden;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#recentMessageList .blockIcon {
+    float: left;
+    width: 32px;
+    height: auto;
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+#recentMessageList p {
+    font-size: 0.85em;
+    line-height: 1.3;
+    overflow: hidden;
+}
+
+.breadcrumb {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.addresses {
+    margin-bottom: 30px;
+}
+
+#company {
+    float: left;
+    width: 45%;
+    font-size: 0.95em;
+}
+
+#clientInfo {
+    float: right;
+    width: 45%;
+    text-align: right;
+    font-size: 0.95em;
+}
+
+#company h4, #clientInfo h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+    clear: both;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table th {
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+table td {
+    padding: 15px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #eee;
+}
+
+table img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.SendButton {
+    display: block;
+    width: fit-content;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.SendButton:hover {
+    background-color: #217dbb;
+    text-decoration: none;
+}
+
+#chList li {
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9; 
+}
+
+.chNumber {
+    float: left;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #7f8c8d;
+    width: 50px;
+    text-align: right;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+#chList p {
+    font-size: 0.9em;
+    padding-top: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+#sellList li {
+    overflow: hidden;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.boxBook {
+    float: left;
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+    border: 1px solid #eee;
+}
+
+.bookTitle {
+    font-size: 0.85em;
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    #railLeft, #middle, aside {
+        float: none;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    #railLeft {
+        margin-bottom: 20px;
+    }
+
+    #company, #clientInfo {
+        float: none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+}
