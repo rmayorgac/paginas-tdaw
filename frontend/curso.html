@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plataforma — Curso</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <div class="encabezado">
+      <h1>Lecciones</h1>
+      <div class="acciones">
+        <span id="usuarioActual" class="badge">—</span>
+        <button id="btnVolver" class="boton" type="button">Volver</button>
+        <button id="btnCerrar" class="boton peligro" type="button">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <div class="grid dos">
+      <div class="panel">
+        <div class="fila" style="justify-content:space-between; align-items:center; gap:12px;">
+          <h2 style="margin:0; font-size:16px;">Contenido del curso</h2>
+          <div class="fila" style="gap:8px;">
+            <div id="estadoProgreso" class="estado">Progreso: —</div>
+            <div id="estado" class="estado">—</div>
+          </div>
+        </div>
+
+        <!-- NUEVO: aquí se inserta el botón único admin/instructor -->
+        <div id="accionesAdminCurso" class="fila" style="margin-top:10px; gap:8px;"></div>
+
+        <!-- Nota solo para admin/instructor (el JS la oculta si es empleado) -->
+        <div id="notaAdmin" class="pie" style="margin-top:10px;">
+          Admin: arrastra una lección y suéltala para reordenar (se guarda automáticamente).
+        </div>
+
+        <div class="separador"></div>
+        <div id="listaLecciones" class="lista"></div>
+
+        <div class="separador"></div>
+        <div id="estadoAccion" class="estado">—</div>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin:0 0 10px 0; font-size:16px;">Crear lección</h2>
+        <form id="formCrearLeccion">
+          <div class="campo">
+            <label for="titulo">Título</label>
+            <input id="titulo" required placeholder="Ej. Uso correcto de EPP" />
+          </div>
+
+          <div class="campo">
+            <label for="tipo_contenido">Tipo</label>
+            <select id="tipo_contenido">
+              <option value="texto">Texto</option>
+              <option value="externo">Externo (URL)</option>
+              <option value="video">Video (URL)</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="url_contenido">Contenido / URL</label>
+            <textarea id="url_contenido" placeholder="Texto breve o URL..."></textarea>
+          </div>
+
+          <div class="campo">
+            <label for="orden">Orden (opcional)</label>
+            <input id="orden" type="number" value="1" min="0" />
+          </div>
+
+          <div class="fila">
+            <button class="boton primario" type="submit">Crear</button>
+            <div id="estadoCrear" class="estado">—</div>
+          </div>
+
+          <div class="pie">
+            Consejo: si dejas orden igual, puedes reordenar después con arrastrar/soltar.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL simple (inline) para progreso admin -->
+  <div id="modalProgreso" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:9999;">
+    <div style="max-width:980px; margin:6vh auto; background:#fff; border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,.25);">
+      <div class="fila" style="justify-content:space-between; align-items:center; gap:12px;">
+        <h2 style="margin:0; font-size:16px;">Progreso de empleados</h2>
+        <button id="btnCerrarModalProgreso" class="boton peligro" type="button">Cerrar</button>
+      </div>
+      <div class="separador"></div>
+      <div id="contenidoModalProgreso" style="max-height:65vh; overflow:auto;"></div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/curso.js"></script>
+</body>
+</html>

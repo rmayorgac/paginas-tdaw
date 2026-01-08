@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plataforma — Capacitaciones externas</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <div class="encabezado">
+      <h1>Capacitaciones externas</h1>
+      <div class="acciones">
+        <span id="usuarioActual" class="badge">—</span>
+
+        <button id="btnInternas" class="boton" type="button">
+          Capacitaciones internas
+        </button>
+
+        <button id="btnExternas" class="boton primario" type="button">
+          Capacitaciones externas
+        </button>
+
+        <button id="btnCerrar" class="boton peligro" type="button">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <div class="grid dos">
+      <div class="panel">
+        <div class="fila" style="justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px;">Listado</h2>
+          <div id="estado" class="estado">—</div>
+        </div>
+        <div class="separador"></div>
+        <div id="listaCapacitaciones" class="lista"></div>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin:0 0 10px 0; font-size:16px;">Registrar capacitación externa</h2>
+
+        <form id="formSubida" enctype="multipart/form-data">
+          <div class="campo">
+            <label for="titulo">Título</label>
+            <input id="titulo" placeholder="Ej. Curso externo: Primeros Auxilios" />
+          </div>
+
+          <div class="campo">
+            <label for="proveedor">Proveedor</label>
+            <input id="proveedor" placeholder="Ej. YouTube / Coursera / Udemy" />
+          </div>
+
+          <div class="campo">
+            <label for="evidencia">Evidencia (archivo)</label>
+            <input id="evidencia" type="file" />
+          </div>
+
+          <div class="fila">
+            <button class="boton primario" type="submit">Enviar</button>
+            <div id="estadoSubida" class="estado">—</div>
+          </div>
+
+          <div class="pie">
+            Nota: el estado inicia en <strong>pendiente</strong> y un admin puede aprobar/rechazar.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/capacitaciones.js"></script>
+</body>
+</html>

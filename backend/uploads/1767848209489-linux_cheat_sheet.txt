@@ -1,0 +1,41 @@
+# Ubuntu Touchpad & System Commands Cheat Sheet
+
+## TOUCHPAD & SCROLL SPEED
+xinput list
+xinput list-props "ELAN050A:01 04F3:3158 Touchpad"
+xinput set-prop "ELAN050A:01 04F3:3158 Touchpad" "libinput Scrolling Pixel Distance" 16.5
+chmod +x ~/.config/set-touchpad-scroll.sh
+~/.config/set-touchpad-scroll.sh
+xinput set-prop "ELAN050A:01 04F3:3158 Touchpad" "libinput Scrolling Pixel Distance" 15
+echo $XDG_SESSION_TYPE
+echo $XDG_CURRENT_DESKTOP
+
+## SYSTEM & PACKAGE MANAGEMENT
+sudo apt update
+sudo apt upgrade
+sudo apt install package_name
+sudo apt remove package_name
+apt search package_name
+
+## FILE & DIRECTORY MANAGEMENT
+ls -la
+cd /path/to/directory
+pwd
+cp source_file destination_file
+mv source_file destination_file
+rm file_name
+rm -r directory_name
+
+## SYSTEM INFO & MONITORING
+df -h
+free -h
+top
+lshw
+lspci
+lsusb
+uname -r
+
+## TEXT FILES & EDITING
+cat file.txt
+less file.txt
+nano file.txt

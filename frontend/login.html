@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plataforma de Capacitaciones — Iniciar sesión</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <div class="encabezado">
+      <h1>Plataforma de Capacitaciones</h1>
+      <div class="acciones">
+        <!-- NO mostrar cerrar sesión aquí -->
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 style="margin:0 0 10px 0; font-size:16px;">Iniciar sesión</h2>
+
+      <form id="formLogin" class="grid" autocomplete="off">
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input id="correo" type="email" placeholder="admin@demo.com" required />
+        </div>
+
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input id="clave" type="password" placeholder="admin123" required />
+        </div>
+
+        <div class="fila">
+          <button class="boton primario" type="submit">Entrar</button>
+          <div id="estado" class="estado">Ingresa tus credenciales.</div>
+        </div>
+
+        <div class="pie">
+          Usuario demo: <strong>admin@demo.com</strong> · contraseña: <strong>admin123</strong>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

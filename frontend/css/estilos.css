@@ -1,0 +1,418 @@
+:root{
+  --fondo:#0b1220;
+  --panel:#111a2e;
+  --borde:#223055;
+  --texto:#e8eefc;
+  --muted:#a6b3d3;
+  --primario:#4f7cff;
+  --primario2:#2f62ff;
+  --ok:#23c55e;
+  --warn:#f59e0b;
+  --error:#ef4444;
+  --radius:14px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+               "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background: linear-gradient(180deg, #070b14, var(--fondo));
+  color:var(--texto);
+}
+
+a{ color: var(--primario); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+.contenedor{
+  width: min(1100px, 92vw);
+  margin: 26px auto;
+}
+
+.encabezado{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding: 14px 16px;
+  border:1px solid var(--borde);
+  background: rgba(17,26,46,.75);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+}
+
+.encabezado h1{
+  font-size: 18px;
+  margin:0;
+  letter-spacing:.2px;
+}
+
+.encabezado .acciones{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.boton{
+  border:1px solid var(--borde);
+  background: transparent;
+  color: var(--texto);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor:pointer;
+  font-weight:600;
+}
+.boton:hover{ border-color: #39518e; }
+
+.boton.primario{
+  background: linear-gradient(180deg, var(--primario), var(--primario2));
+  border-color: transparent;
+}
+.boton.primario:hover{ filter: brightness(1.05); }
+
+.boton.peligro{
+  border-color: rgba(239,68,68,.6);
+}
+.boton.peligro:hover{ background: rgba(239,68,68,.12); }
+
+.panel{
+  margin-top: 14px;
+  border:1px solid var(--borde);
+  background: rgba(17,26,46,.75);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+}
+
+@media (min-width: 900px){
+  .grid.dos{
+    grid-template-columns: 1.2fr .8fr;
+    align-items:start;
+  }
+}
+
+.campo{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom: 10px;
+}
+.campo label{
+  font-size: 13px;
+  color: var(--muted);
+}
+.campo input,
+.campo textarea,
+.campo select{
+  width:100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border:1px solid var(--borde);
+  background: rgba(6,10,20,.55);
+  color: var(--texto);
+  outline:none;
+}
+.campo textarea{ min-height: 90px; resize: vertical; }
+
+.fila{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.estado{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--borde);
+  background: rgba(6,10,20,.55);
+  color: var(--muted);
+}
+
+.estado.ok{
+  border-color: rgba(35,197,94,.55);
+  color: #bff3d0;
+}
+.estado.warn{
+  border-color: rgba(245,158,11,.55);
+  color: #ffe1a6;
+}
+.estado.error{
+  border-color: rgba(239,68,68,.55);
+  color: #ffc0c0;
+}
+
+.lista{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.tarjeta{
+  border:1px solid var(--borde);
+  background: rgba(6,10,20,.45);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.tarjeta h3{
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+.tarjeta p{
+  margin: 0 0 10px 0;
+  color: #cdd8f6; /* más legible que muted */
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border:1px solid var(--borde);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.badge.ok{
+  border-color: rgba(35,197,94,.55);
+  color: #bff3d0;
+}
+.badge.warn{
+  border-color: rgba(245,158,11,.55);
+  color: #ffe1a6;
+}
+
+.separador{
+  height:1px;
+  background: rgba(34,48,85,.7);
+  margin: 12px 0;
+}
+
+.pie{
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================
+   MEJORAS DE LEGIBILIDAD
+   PROGRESO DE EMPLEADOS
+   ========================= */
+
+/* Listas internas (progreso por empleado) */
+.tarjeta ul,
+.tarjeta li{
+  color: var(--texto);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* Encabezados internos */
+.tarjeta h4,
+.tarjeta strong{
+  color: var(--texto);
+  font-weight: 600;
+}
+
+/* Diferenciación visual */
+.tarjeta .ok{
+  color: #bff3d0;
+}
+.tarjeta .pendiente{
+  color: #ffe1a6;
+}
+
+/* Separación visual entre tarjetas largas */
+.tarjeta + .tarjeta{
+  margin-top: 12px;
+}
+
+/* Fondo ligeramente más claro para lectura */
+.panel .tarjeta{
+  background: rgba(10,16,32,.6);
+}
+
+/* =========================
+   FIX MODAL / POPUP (PROGRESO)
+   Si el popup usa <dialog> o un contenedor con fondo blanco,
+   forzamos tema oscuro y texto visible.
+   ========================= */
+
+dialog,
+[role="dialog"],
+.modal,
+.popup,
+.modal-content,
+.dialog,
+.ventana,
+#modalProgreso,
+#progresoModal{
+  background: rgba(17,26,46,.98) !important;
+  color: var(--texto) !important;
+  border: 1px solid var(--borde) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,.55) !important;
+}
+
+/* Forzar color de texto dentro del modal */
+dialog *,
+[role="dialog"] *,
+.modal *,
+.popup *,
+.modal-content *,
+.dialog *,
+.ventana *,
+#modalProgreso *,
+#progresoModal *{
+  color: var(--texto) !important;
+}
+
+/* Tablas / filas dentro del modal */
+dialog table,
+[role="dialog"] table,
+.modal table,
+.popup table,
+.modal-content table{
+  color: var(--texto) !important;
+  border-color: rgba(34,48,85,.7) !important;
+}
+
+dialog th, dialog td,
+[role="dialog"] th, [role="dialog"] td,
+.modal th, .modal td,
+.popup th, .popup td,
+.modal-content th, .modal-content td{
+  color: var(--texto) !important;
+  border-color: rgba(34,48,85,.7) !important;
+}
+
+/* Muted dentro del modal: más claro que --muted para no perderse */
+dialog .muted,
+[role="dialog"] .muted,
+.modal .muted,
+.popup .muted,
+.modal-content .muted{
+  color: #cdd8f6 !important;
+}
+
+/* Links dentro del modal */
+dialog a,
+[role="dialog"] a,
+.modal a,
+.popup a,
+.modal-content a{
+  color: #9db6ff !important;
+}
+
+/* Badges dentro del modal */
+dialog .badge,
+[role="dialog"] .badge,
+.modal .badge,
+.popup .badge,
+.modal-content .badge{
+  background: rgba(6,10,20,.55) !important;
+  color: var(--texto) !important;
+  border-color: var(--borde) !important;
+}
+
+/* =========================
+   OVERRIDE AGRESIVO PARA MODALES BLANCOS
+   (por si vienen con estilos inline o clases distintas)
+   Pegar al FINAL del estilos.css
+   ========================= */
+
+/* Si el modal es <dialog> */
+dialog{
+  background: rgba(17,26,46,.98) !important;
+  color: var(--texto) !important;
+  border: 1px solid var(--borde) !important;
+  border-radius: var(--radius) !important;
+}
+dialog::backdrop{
+  background: rgba(0,0,0,.55) !important;
+}
+
+/* Cualquier "contenedor modal" típico */
+[role="dialog"],
+.modal, .popup, .dialog, .ventana,
+#modal, #modalProgreso, #progresoModal,
+[class*="modal"], [class*="dialog"], [class*="popup"]{
+  background: rgba(17,26,46,.98) !important;
+  color: var(--texto) !important;
+  border: 1px solid var(--borde) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,.55) !important;
+}
+
+/* Si el fondo blanco viene por style inline (MUY común) */
+[style*="background:#fff"],
+[style*="background: #fff"],
+[style*="background:white"],
+[style*="background: white"],
+[style*="background-color:#fff"],
+[style*="background-color: #fff"],
+[style*="background-color:white"],
+[style*="background-color: white"]{
+  background: rgba(17,26,46,.98) !important;
+  color: var(--texto) !important;
+  border-color: var(--borde) !important;
+}
+
+/* Forzar texto visible dentro del modal */
+dialog *, [role="dialog"] *,
+.modal *, .popup *, .dialog *, .ventana *,
+#modal *, #modalProgreso *, #progresoModal *,
+[class*="modal"] *, [class*="dialog"] *, [class*="popup"] *{
+  color: var(--texto) !important;
+}
+
+/* Tablas (tu popup parece tabla/listado) */
+dialog table, [role="dialog"] table,
+.modal table, .popup table, .dialog table,
+[class*="modal"] table, [class*="dialog"] table, [class*="popup"] table{
+  color: var(--texto) !important;
+  border-color: rgba(34,48,85,.7) !important;
+}
+dialog th, dialog td,
+[role="dialog"] th, [role="dialog"] td,
+.modal th, .modal td, .popup th, .popup td,
+[class*="modal"] th, [class*="modal"] td,
+[class*="dialog"] th, [class*="dialog"] td{
+  color: var(--texto) !important;
+  border-color: rgba(34,48,85,.7) !important;
+}
+
+/* Links dentro del modal */
+dialog a, [role="dialog"] a,
+.modal a, .popup a, .dialog a,
+[class*="modal"] a, [class*="dialog"] a, [class*="popup"] a{
+  color: #9db6ff !important;
+}
+
+/* Botón "Cerrar" dentro del modal (si existe) */
+dialog .boton, [role="dialog"] .boton,
+.modal .boton, .popup .boton,
+[class*="modal"] .boton, [class*="dialog"] .boton{
+  color: var(--texto) !important;
+}
+
+/* Badges dentro del modal */
+dialog .badge, [role="dialog"] .badge,
+.modal .badge, .popup .badge,
+[class*="modal"] .badge, [class*="dialog"] .badge{
+  background: rgba(6,10,20,.55) !important;
+  color: var(--texto) !important;
+  border-color: var(--borde) !important;
+}

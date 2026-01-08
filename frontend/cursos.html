@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plataforma — Capacitaciones internas</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <div class="encabezado">
+      <h1>Capacitaciones internas</h1>
+      <div class="acciones">
+        <span id="usuarioActual" class="badge">—</span>
+
+        <button id="btnInternas" class="boton primario" type="button">
+          Capacitaciones internas
+        </button>
+
+        <button id="btnExternas" class="boton" type="button">
+          Capacitaciones externas
+        </button>
+
+        <button id="btnCerrar" class="boton peligro" type="button">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <div class="grid dos">
+      <div class="panel">
+        <div class="fila" style="justify-content:space-between;">
+          <h2 style="margin:0; font-size:16px;">Listado de cursos</h2>
+          <div id="estado" class="estado">—</div>
+        </div>
+        <div class="separador"></div>
+        <div id="listaCursos" class="lista"></div>
+      </div>
+
+      <div class="panel">
+        <h2 style="margin:0 0 10px 0; font-size:16px;">Crear curso interno</h2>
+        <form id="formCrearCurso">
+          <div class="campo">
+            <label for="titulo">Título</label>
+            <input id="titulo" required placeholder="Ej. Capacitación ISO" />
+          </div>
+
+          <div class="campo">
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" placeholder="Breve descripción..."></textarea>
+          </div>
+
+          <div class="fila">
+            <label class="badge" style="cursor:pointer;">
+              <input id="publicado" type="checkbox" style="margin-right:8px;" />
+              Publicado
+            </label>
+          </div>
+
+          <div class="fila" style="margin-top:10px;">
+            <button class="boton primario" type="submit">Crear</button>
+            <div id="estadoCrear" class="estado">—</div>
+          </div>
+
+          <div class="pie">
+            Nota: Solo roles <strong>admin</strong> e <strong>instructor</strong> pueden crear cursos.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/cursos.js"></script>
+</body>
+</html>
