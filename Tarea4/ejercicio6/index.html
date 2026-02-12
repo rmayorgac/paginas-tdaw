@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ejercicio 6 - Formulario básico con validación</title>
+  <style>
+    /* Mensaje de error en rojo */
+    .error { color: #c62828; }
+    /* Mensaje de éxito en verde */
+    .success { color: #2e7d32; }
+    /* Pequeño espaciado para el mensaje */
+    #msg { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <!-- Formulario con campo nombre -->
+  <form id="miFormulario" novalidate>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" />
+    <button type="submit" id="submitBtn">Enviar</button>
+
+    <!-- Elemento donde se muestran mensajes; aria-live para lectores de pantalla -->
+    <div id="msg" role="status" aria-live="polite"></div>
+  </form>
+
+  <!-- Archivo JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
